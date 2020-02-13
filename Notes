@@ -1,0 +1,25 @@
+Cells
+{
+  Entity - Character, Zombie or Static Object
+  Terrain
+}
+
+Terrain
+{
+  Type
+  Texture Variant
+}
+
+Entity
+{
+  Health
+  Armour Value
+  Movement
+}
+
+Entity - Zombie
+Entity - Character
+{
+  Inventory
+}
+Entity - Static Object
