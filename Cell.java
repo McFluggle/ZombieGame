@@ -43,3 +43,5 @@ class Zombie extends Entity
 {
   private int type;
 }
+
+//Hello!!
