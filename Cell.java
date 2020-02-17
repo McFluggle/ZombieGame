@@ -48,15 +48,27 @@ class Terrain
   }
 }
 
-class Entity
+abstract class Entity
+{
+  private Cell parent();
+}
+
+abstract class LivingEntity extends Entity
 {
   private int health;
   private int armour;
+  private int movement;
 
-  public Entity(int _H, int _A)
+  public Entity(int _H, int _A, int _M)
   {
     this.health = _H;
     this.armour = _A;
+    this.movement = _M;
+  }
+
+  public int getMovement()
+  {
+    return this.movement;
   }
 
   public void dealDamage(int damageDealt, boolean piercing)
@@ -73,12 +85,31 @@ class Entity
 
     if (this.health == 0)
     {
-      //Kill
+      kill();
     }
+  }
+  public void dealDamage(int damageDealt)
+  {
+    dealDamage(damageDealt, False)
+  }
+
+  private void kill()
+  {
+    //remove from cell
   }
 }
 
-class Zombie extends Entity
+class Zombie extends LivingEntity
 {
-  private int type;
+
+}
+
+class Character extends LivingEntity
+{
+
+}
+
+class StaticEntity extends entity
+{
+
 }
